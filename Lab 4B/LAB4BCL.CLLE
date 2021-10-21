@@ -15,8 +15,8 @@
 
                 SELECT
                    WHEN       (&OPTION = '1' *OR &OPTION = '01') DO
-                      RTVUSRPRF  OUTQ(&OUTQ) OUTQLIB(&OUTQLIB)
-                      CHGVAR     &MESSAGE ('Signed on User''s message Queue is QUSRSYS' *CAT +
+                      RTVUSRPRF  MSGQ(&OUTQ) MSGQLIB(&OUTQLIB)
+                      CHGVAR     &MESSAGE ('Signed on User''s message Queue is ' &OUTQLIB *CAT +
                                    '/' *CAT &OUTQ)
                       CHGVAR     &MESSAGE1 ('CLLE Programs can report on and manage the users +
                                    on the system')
